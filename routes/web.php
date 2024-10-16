@@ -24,11 +24,11 @@ Route::get('/', [App\Http\Controllers\PostController::class, 'index'])->name('po
 
 Route::resource('/posts', 'PostController', ['except' => ['index']]);
 
-Route::post('post/create', [PostsController::class,
+Route::post('post/create', [PostController::class,
 'create']);
 
-Route::get('post/{id}/update-form', [PostsController::class, 'updateForm']);
+Route::get('post/{id}/update-form', [PostController::class, 'updateForm']);
 
-Route::post('post/update', [PostsController::class,
+Route::post('post/update', [PostController::class,
 'update']);
  

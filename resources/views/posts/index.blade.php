@@ -22,6 +22,7 @@
                 </h5>
                 <p class="card-text">{{ $post->content }}</p>
                 <a href="/post/{{ $post->id }}/update-form" class="btn btn-primary">更新</a>
+                <a href="/post/{{ $post->id }}/delete" class="btn btn-danger" onclick="return confirm('こちらの投稿を削除してもよろしいでしょうか？')">削除</a>
             </div>
             </div>
             @endforeach

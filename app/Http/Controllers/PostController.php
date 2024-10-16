@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -86,7 +87,7 @@ return redirect('/index');
      */
     public function updateForm($id)
     {
-        $post = DB::table('posts')
+        $post = DB::table('post')
  
         ->where('id', $id)
  
@@ -129,4 +130,19 @@ return redirect('/index');
         //
     }
     
+    public function delete($id)
+ 
+{
+ 
+DB::table('posts')
+ 
+->where('id', $id)
+ 
+->delete();
+ 
+ 
+ 
+return redirect('/index');
+ 
+}
 }
